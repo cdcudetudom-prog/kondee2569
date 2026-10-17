@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="referrer" content="no-referrer">
+  <meta name="theme-color" content="#ffffff">
+  <title>คนดีศรีระบาด 2569</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      background: #ffffff;
+      font-family: "Sarabun", "Noto Sans Thai", system-ui, sans-serif;
+    }
+    #app {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+    }
+    #loading {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      background: #ffffff;
+      color: #334155;
+      font-size: 16px;
+      transition: opacity .4s ease;
+      z-index: 2;
+    }
+    #loading.hide { opacity: 0; pointer-events: none; }
+    .spinner {
+      width: 38px;
+      height: 38px;
+      border: 4px solid #e2e8f0;
+      border-top-color: #0f766e;
+      border-radius: 50%;
+      animation: spin .9s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    #fallback {
+      position: fixed;
+      right: 10px;
+      bottom: calc(10px + env(safe-area-inset-bottom));
+      z-index: 3;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, .78);
+      color: #ffffff;
+      font-size: 13px;
+      text-decoration: none;
+      transition: opacity .4s ease;
+    }
+    #fallback.hide { opacity: 0; pointer-events: none; }
+  </style>
+</head>
+<body>
+  <div id="loading">
+    <div class="spinner"></div>
+    <div>กำลังโหลด คนดีศรีระบาด 2569…</div>
+  </div>
+
+  <!--
+    credentialless = โหลด Web App โดยไม่ส่งข้อมูลบัญชี Google ที่ล็อกอินอยู่
+    จึงหลีกเลี่ยงปัญหา "ขออภัย ไม่สามารถเปิดไฟล์ได้ในขณะนี้" จากการล็อกอินหลายบัญชี
+  -->
+  <iframe
+    id="app"
+    credentialless
+    src="https://script.google.com/macros/s/AKfycbx2RaeBqe7lQDQFIxF3cdk-vjAi8VqxOBcJWCKToYs8puKwciQHvv20zoEJGQtXB9U/exec"
+    title="คนดีศรีระบาด 2569"
+    allow="clipboard-write; geolocation; camera"
+    referrerpolicy="no-referrer"></iframe>
+
+  <a id="fallback"
+     href="https://script.google.com/macros/s/AKfycbx2RaeBqe7lQDQFIxF3cdk-vjAi8VqxOBcJWCKToYs8puKwciQHvv20zoEJGQtXB9U/exec"
+     target="_blank" rel="noopener">เปิดไม่ได้? แตะที่นี่</a>
+
+  <script>
+    var frame = document.getElementById('app');
+    var loading = document.getElementById('loading');
+    var fallback = document.getElementById('fallback');
+
+    function hideLoading() { loading.classList.add('hide'); }
+    frame.addEventListener('load', hideLoading);
+    setTimeout(hideLoading, 8000);
+
+    // ซ่อนปุ่มสำรองหลัง 15 วินาที เพื่อไม่ให้บังหน้าจอ
+    setTimeout(function () { fallback.classList.add('hide'); }, 15000);
+  </script>
+</body>
+</html>
