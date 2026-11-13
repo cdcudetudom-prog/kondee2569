@@ -2701,7 +2701,7 @@ pUqAepUPRP4Mr15hK/kfwxHcBRcBlZbQg0ee8r5E4gF2PMYpQdDEc+lREs1vftlZQB1YIi70hNa6DvGn
       </div>
       <div>
         <div class="photo-frame" id="photoBox"></div>
-        <div class="photo-cap">เครื่องแบบปกติขาว</div>
+        <div class="photo-cap"></div>
       </div>
     </div>
   </header>
@@ -2775,7 +2775,7 @@ pUqAepUPRP4Mr15hK/kfwxHcBRcBlZbQg0ee8r5E4gF2PMYpQdDEc+lREs1vftlZQB1YIi70hNa6DvGn
   <!-- ===== STATS ===== -->
   <div class="stats reveal">
     <div class="stat"><b>13</b><span>ปี งานระบาดวิทยา</span></div>
-    <div class="stat"><b>8.10</b><span>ปี อายุราชการ</span></div>
+    <div class="stat"><b>9.1</b><span>ปี อายุราชการ</span></div>
     <div class="stat"><b id="appCount">5</b><span>ระบบ/นวัตกรรมดิจิทัล</span></div>
     <div class="stat"><b>4</b><span>หน่วยงานที่ปฏิบัติงาน</span></div>
   </div>
@@ -2938,8 +2938,8 @@ pUqAepUPRP4Mr15hK/kfwxHcBRcBlZbQg0ee8r5E4gF2PMYpQdDEc+lREs1vftlZQB1YIi70hNa6DvGn
       </div>
       <div class="award">
         <div class="medal">⭐</div>
-        <div><h4>เข้ารับการประเมินมาตรฐานทีม SRRT ระดับดีเยี่ยม</h4>
-        <p>โดยกองระบาดวิทยา กรมควบคุมโรค · พ.ศ. 2569 (อยู่ระหว่างรอผลการประเมินอย่างเป็นทางการ)</p></div>
+        <div><h4>ผ่านการรับรองมาตรฐานทีม SRRT ระดับดีเยี่ยม (ระดับประเทศ)</h4>
+        <p>โดยกองระบาดวิทยา กรมควบคุมโรค · พ.ศ. 2569 (23 กรกฏาคม 2569)</p></div>
       </div>
     </div>
   </section>
@@ -2956,7 +2956,7 @@ pUqAepUPRP4Mr15hK/kfwxHcBRcBlZbQg0ee8r5E4gF2PMYpQdDEc+lREs1vftlZQB1YIi70hNa6DvGn
   <footer>
     <b>นายสนธยา แสงงาม</b> · เจ้าพนักงานสาธารณสุขชำนาญงาน<br>
     สำนักงานสาธารณสุขอำเภอเดชอุดม จังหวัดอุบลราชธานี<br>
-    ใบสมัครเข้ารับการสรรหา “คนดีศรีระบาด” ประจำปี 2569
+    “คนดีศรีระบาด ประเภทผู้ปฏิบัติงานระดับอำเภอ เขตสุขภาพที่ 10” ประจำปี 2569
   </footer>
 </div>
 
@@ -2988,8 +2988,9 @@ const PROFILE = {
   position: "เจ้าพนักงานสาธารณสุขชำนาญงาน",
   duty: "หัวหน้าฝ่ายควบคุมโรคติดต่อ / ผู้สอบสวนหลัก (PI)",
   office: "สำนักงานสาธารณสุขอำเภอเดชอุดม จ.อุบลราชธานี",
-  service: "8 ปี 10 เดือน",
+  service: "9 ปี 1 เดือน",
   epiExp: "13 ปี",
+  Profession: "การสาธารณสุขชุมชน ใบอนุญาต สธช.เลขที่ 27028",
   tel: "065-096-8126",
   telOffice: "045-953-391",
   email: "Moanamiakiki@gmail.com"
@@ -3124,7 +3125,8 @@ $("#infoGrid").innerHTML =
   row("หน้าที่พิเศษ", PROFILE.duty) +
   row("สังกัด", PROFILE.office) +
   row("อายุราชการ", PROFILE.service) +
-  row("ประสบการณ์ระบาดวิทยา", PROFILE.epiExp);
+  row("ประสบการณ์ระบาดวิทยา", PROFILE.epiExp) +
+  row("ผู้ประกอบวิชาชีพ", PROFILE.Profession);
 
 $("#contactGrid").innerHTML =
   row("โทรศัพท์มือถือ", `<a href="tel:${PROFILE.tel.replace(/-/g,'')}">${PROFILE.tel}</a>`) +
